@@ -1,6 +1,5 @@
 // get all the students and put them into an array
 const students = document.getElementsByClassName("student-item");
-console.log("students", students.length);
 // get the page element to append items to
 const pageContainer = document.getElementById('page');
 
@@ -9,11 +8,11 @@ const pageContainer = document.getElementById('page');
 const addPagination = (studentList) => {
     /** determine how many pages there should be based on number of students **/
     let pageNum = studentList.length / 10;
-    if (pageNum % 1 != 0) { // if the number of students is not evenly divided by 10, add 1 to the number of pages
-        pageNum = Math.floor(pageNum) + 1;
+    if (pageNum % 1 != 0) { // if the number of students is not evenly divided by 10 and it has a decimal value
+        pageNum = Math.floor(pageNum) + 1; // take the floor value and add 1 to the number of pages
     } 
     
-    /** build pagination **/
+    /** Build Pagination **/
     // create div to hold pagination items
     const pagination = document.createElement('div');
     pagination.className = "pagination";
@@ -25,7 +24,7 @@ const addPagination = (studentList) => {
         paginationHTML += '<li><a href="#">'+i+'</a></li>';
     }
     paginationHTML += "</ul>"
-    pagination.innerHTML = paginationHTML; // set inner html to the unorderlist of page navs
+    pagination.innerHTML = paginationHTML; // put paginationHTML into pagination div
 
     pageContainer.appendChild(pagination); // append pagination to page
 }
@@ -58,7 +57,7 @@ const paginationItems = document.querySelectorAll('#pagination ul li a');
 paginationUl.addEventListener('click', (event) => {
     event.preventDefault(); // prevent default link behavior so page doesn't jump
     
-    for (let i = 0; i < paginationItems.length; i++) { // loop through all a elements in pagination and remove active class
+    for (let i = 0; i < paginationItems.length; i++) { // loop through all a elements within pagination and remove active class
         paginationItems[i].classList.remove("active");
     }
 
@@ -75,10 +74,10 @@ paginationUl.addEventListener('click', (event) => {
     } 
     // show the 10 students based on page range
     for (let p = pageStart; p < pageEnd; p++) {
-        if (!students[p]) {
+        if (!students[p]) { // if student doesn't exist in array exit loop to avoid throwing an error because no students are left
             break;
         } else {
-            students[p].style.display = "block";
+            students[p].style.display = "block"; // if student exists show student
         }
     }
 
