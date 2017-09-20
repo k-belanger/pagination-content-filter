@@ -22,9 +22,11 @@ Using progressive enhancement and unobtrusive JavaScript, add pagination to the 
     - phillip = 7 results
     - phil = 13 resuls
     - mary = 0 results
+- If there are less than 10 results no pagination is displayed. If there are more than 10 the appropriate amount of pagination links are displayed.
 - If there are no matches found a message displays that tells the user so.
 - Clearing the search bar of it's value will display all the students.
 - Note: Search button must be clicked in order to activate search. Pressing the enter key does not work at this time.
 
-
-*Project was built using plain JavaScript. No jQuery was used intentionally.
+<br/>
+<br/>
+*The project was built using plain JavaScript. No jQuery was used intentionally.
