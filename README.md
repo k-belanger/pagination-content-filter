@@ -16,5 +16,15 @@ Using progressive enhancement and unobtrusive JavaScript, add pagination to the 
 
 ## Exceeds Expectations:
 - Dynamically add a search bar to filter the students by name.
-- If no matches were forund a message displays that tells the user so.
+- The search returns results where the search term is found in any part of the name or email address.
+- For easy testing purposes:
+    - all students = 68 results
+    - phillip = 7 results
+    - phil = 13 resuls
+    - mary = 0 results
+- If there are no matches forund a message displays that tells the user so.
+- If the search bar has no value all students will be displayed
+- Note: Search button must be clicked in order to activate search. Pressing the enter key does not work at this time.
 
+
+* Project was built using plain JavaScript. No jQuery was used intentionally.
