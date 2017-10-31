@@ -80,19 +80,20 @@ const addPagination = (studentList) => {
 
 
 /********** CREATE & ADD SEARCH BOX TO PAGE **********/
-const searchBox = document.createElement('div');
+const searchBox = document.createElement('form');
 searchBox.className = 'student-search';
+searchBox.id = 'searchBox';
 searchBox.innerHTML = '<input placeholder="Search for students..."><button >Search</button>';
 pageHeader.appendChild(searchBox);
 
-
 /********** SEARCH FUNCTION **********/
-const searchBtn = document.querySelector('.page-header button');
 const searchField = document.querySelector('.page-header input');
 let studentName = "";
 let studentEmail = "";
 
-searchBtn.addEventListener('click', (e) => {
+searchBox.addEventListener('submit', (e) => {
+    e.preventDefault();
+
     if (document.getElementById('error')) {
         page.removeChild(error);
     }
