@@ -3,6 +3,7 @@
 by Kimberly Belanger<br/>
 September 19, 2017
 
+View Project at : https://k-belanger.github.io/pagination-content-filter
 
 ## Project Objective:
 Using progressive enhancement and unobtrusive JavaScript, add pagination to the page in order to filter through a long list of students.
